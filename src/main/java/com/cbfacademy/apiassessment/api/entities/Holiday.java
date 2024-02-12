@@ -1,0 +1,5 @@
+package com.cbfacademy.apiassessment.api.entities;
+
+public class Holiday {
+    
+}
