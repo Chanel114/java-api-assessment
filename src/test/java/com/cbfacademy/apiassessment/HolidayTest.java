@@ -25,9 +25,6 @@ public class HolidayTest {
 //Asserts that the calculated days are equal to the expected value (5)
         assertEquals(5, daysUntilNextHoliday); 
 
-        
     }
-
-
 
 }
