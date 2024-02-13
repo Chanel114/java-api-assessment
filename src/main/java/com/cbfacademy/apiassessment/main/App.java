@@ -8,15 +8,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-public class HolidayApiApplication {
+public class App {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HolidayApiApplication.class, args);
+		SpringApplication.run(App.class, args);
 	}
 
 	@GetMapping("/greeting")
-	public String greeting(@RequestParam(defaultValue = "World") String name) {
-		return "Hello %s".formatted(name);
+	public String greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
+		return String.format("Hello %s", name);
 	}
 
 }

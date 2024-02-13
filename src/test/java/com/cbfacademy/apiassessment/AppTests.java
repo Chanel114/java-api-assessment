@@ -12,13 +12,13 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.context.annotation.Description;
 import org.springframework.http.ResponseEntity;
 
-import com.cbfacademy.apiassessment.main.HolidayApiApplication;
+import com.cbfacademy.apiassessment.main.App;
 
 import java.net.URL;
 
 
 
-@SpringBootTest(classes = HolidayApiApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(classes = App.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class AppTests {
 
 	@LocalServerPort
