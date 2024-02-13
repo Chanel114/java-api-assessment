@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 public class Holiday {
-    private String name;
     private LocalDate date;
 
     //Setter method for holiday date
