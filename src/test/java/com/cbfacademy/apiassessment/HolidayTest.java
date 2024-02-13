@@ -10,8 +10,6 @@ import com.cbfacademy.apiassessment.api.entities.Holiday;
 
 public class HolidayTest {
 
-     
-    
     @Test
     void daysUntilNextHoliday() {
 //Create an instance of the Holiday class
