@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 public class Holiday {
+    //private String name;
     private LocalDate date;
 
     //Setter method for holiday date
@@ -20,6 +21,9 @@ public class Holiday {
             return (int)
         ChronoUnit.DAYS.between (currentDate, date);
     }
+
+    //public void getName(){
+   // this.name = name }
 
     }
 

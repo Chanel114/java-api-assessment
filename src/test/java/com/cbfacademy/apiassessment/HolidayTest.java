@@ -9,12 +9,12 @@ import org.junit.jupiter.api.Test;
 import com.cbfacademy.apiassessment.api.entities.Holiday;
 
 public class HolidayTest {
+    //Create an instance of the Holiday class
+    Holiday holiday = new Holiday();
 
     @Test
     void daysUntilNextHoliday() {
-//Create an instance of the Holiday class
-        Holiday holiday = new Holiday();
-        
+//GIVEN
 //set a future date for the holiday (5 days from today) (simulates a scenario where holiday is in the future)
     holiday.setDate(LocalDate.now().plusDays(5)); 
     
