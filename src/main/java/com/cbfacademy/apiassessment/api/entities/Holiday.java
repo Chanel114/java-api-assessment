@@ -37,8 +37,10 @@ public class Holiday {
         ChronoUnit.DAYS.between (currentDate, date);
     }
 
-    //public void getName(){
-   // this.name = name }
+    //Getter Method for Holiday name
+    public void getName(String name){
+    this.name = name;
+}
 
      }
 
