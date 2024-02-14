@@ -14,18 +14,18 @@ import com.cbfacademy.apiassessment.api.repositories.InMemoryHolidayRepositoryim
 
 public class HolidayTest {
     //Create an instance of the Holiday class
-    Holiday holiday = new Holiday();
+    Holiday holidayUnderTest = new Holiday("Christmas", LocalDate.now().plusDays(5), true);
 
     @Test
     @Order(1)
     void daysUntilNextHoliday() {
 //GIVEN
 //set a future date for the holiday (5 days from today) (simulates a scenario where holiday is in the future)
-    holiday.setDate(LocalDate.now().plusDays(5)); 
+    holidayUnderTest.setDate(LocalDate.now().plusDays(5)); 
     
 //WHEN
 //Call the daysUntilNextHoliday method to calculate the days until the next holiday date (under test)
-        int daysUntilNextHoliday = holiday.daysUntilNextHoliday();
+        int daysUntilNextHoliday = holidayUnderTest.daysUntilNextHoliday();
 //THEN
 //Asserts that the calculated days are equal to the expected value (5)
         assertEquals(5, daysUntilNextHoliday); 
@@ -36,11 +36,11 @@ public class HolidayTest {
     void addAnotherHolidayAndCheckIfPresent() {
         InMemoryHolidayRepositoryimpl holidayRepository = new InMemoryHolidayRepositoryimpl();
 
-        Holiday holiday = new Holiday();
-        holiday.setDate(LocalDate.now().plusDays(10));
-        holidayRepository.addHoliday(holiday);
+        Holiday anotherHoliday = new Holiday("New Year", LocalDate.now().plusDays(10), true);
+        anotherHoliday.setDate(LocalDate.now().plusDays(10));
+        holidayRepository.addHoliday(anotherHoliday);
 
-        assertTrue(holidayRepository.getAllHolidays().contains(holiday));
+        assertTrue(holidayRepository.getAllHolidays().contains(anotherHoliday));
     }
 
 

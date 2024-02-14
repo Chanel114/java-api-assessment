@@ -7,15 +7,15 @@ public class Holiday {
     private String name; //reps holiday name E.g christmas
     private LocalDate date; // reps date of holiday
     private boolean publicHoliday; // boolean flag indicates if is public holiday
+
 //Constructor
-    public Holiday(String name, LocalDate date){
+    public Holiday(String name, LocalDate date, boolean publicHoliday){
         this.name = name;
         this.date = date;
         this.publicHoliday = publicHoliday;
     }
 
-
-    //Getter and setter method
+    //Getter then setter method for public holiday
     public boolean isPublicHoliday(){
         return publicHoliday;
     }
@@ -30,11 +30,8 @@ public class Holiday {
         this.date = date;
     }
 
-    // Constructors, getters and setters
     //Algorithm to calculate days until the next holiday
         public int daysUntilNextHoliday(){
-
-
         LocalDate currentDate = LocalDate.now();
             return (int)
         ChronoUnit.DAYS.between (currentDate, date);
