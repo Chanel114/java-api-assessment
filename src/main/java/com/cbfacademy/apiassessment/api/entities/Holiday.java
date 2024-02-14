@@ -4,8 +4,26 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 public class Holiday {
-    //private String name;
-    private LocalDate date;
+    private String name; //reps holiday name E.g christmas
+    private LocalDate date; // reps date of holiday
+    private boolean publicHoliday; // boolean flag indicates if is public holiday
+//Constructor
+    public Holiday(String name, LocalDate date){
+        this.name = name;
+        this.date = date;
+        this.publicHoliday = publicHoliday;
+    }
+
+
+    //Getter and setter method
+    public boolean isPublicHoliday(){
+        return publicHoliday;
+    }
+
+    public void setPublicHoliday(boolean publicHoliday){
+        this.publicHoliday = publicHoliday;
+        
+    }
 
     //Setter method for holiday date
     public void setDate(LocalDate date) {
@@ -25,5 +43,5 @@ public class Holiday {
     //public void getName(){
    // this.name = name }
 
-    }
+     }
 
