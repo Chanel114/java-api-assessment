@@ -25,7 +25,7 @@ public class App {
 		System.out.println(h2);
 	}
 
-	@GetMapping("/greeting")
+	@GetMapping("/holidays")
 	@ResponseBody
 	public List<Holiday> hello() {
 		return List.of(
