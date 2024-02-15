@@ -12,7 +12,7 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.context.annotation.Description;
 import org.springframework.http.ResponseEntity;
 
-import com.cbfacademy.apiassessment.main.App;
+import com.cbfacademy.apiassessment.api.App;
 
 import java.net.URL;
 
