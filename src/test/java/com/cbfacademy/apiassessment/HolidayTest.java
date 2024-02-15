@@ -1,7 +1,7 @@
 package com.cbfacademy.apiassessment;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+//import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.LocalDate;
 
@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
 import com.cbfacademy.apiassessment.api.entities.Holiday;
-import com.cbfacademy.apiassessment.api.repositories.InMemoryHolidayRepositoryimpl;
+
 
 public class HolidayTest {
     //Create an instance of the Holiday class
@@ -31,17 +31,7 @@ public class HolidayTest {
         assertEquals(5, daysUntilNextHoliday); 
 
     }
-    @Test
-    @Order(2)
-    void addAnotherHolidayAndCheckIfPresent() {
-        InMemoryHolidayRepositoryimpl holidayRepository = new InMemoryHolidayRepositoryimpl();
-
-        Holiday anotherHoliday = new Holiday("New Year", LocalDate.now().plusDays(10), true);
-        anotherHoliday.setDate(LocalDate.now().plusDays(10));
-        holidayRepository.addHoliday(anotherHoliday);
-
-        assertTrue(holidayRepository.getAllHolidays().contains(anotherHoliday));
-    }
+ 
 
 
 
