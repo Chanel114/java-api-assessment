@@ -11,13 +11,22 @@ public class Holiday {
 
 //Constructors (general object maker to make specific object maker (versioned object))
 
-public Holiday (){
-
-}
    //use this constructor for test
 public Holiday(boolean publicHoliday){
+    this.publicHoliday = publicHoliday;
 
 }
+
+//Getter method for public holiday
+public Boolean isPublicHoliday(){
+          return publicHoliday;
+    }
+
+//Setter method for public holiday
+public void setPublicHoliday(boolean publicHoliday){
+          this.publicHoliday = publicHoliday;
+
+    }
     
 
 public Holiday(String name, LocalDate date, boolean publicHoliday){
@@ -26,17 +35,6 @@ public Holiday(String name, LocalDate date, boolean publicHoliday){
         this.publicHoliday = publicHoliday;
 }
 
-
-
-//Getter then setter method for public holiday
-public boolean isPublicHoliday(){
-          return publicHoliday;
-    }
-
-public void setPublicHoliday(boolean publicHoliday){
-          this.publicHoliday = publicHoliday;
-        
-    }
 
 //Setter method for holiday date
 public void setDate(LocalDate date) {
