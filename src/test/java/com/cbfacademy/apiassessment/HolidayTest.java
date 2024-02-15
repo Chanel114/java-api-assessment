@@ -17,7 +17,6 @@ public class HolidayTest {
     Holiday holidayUnderTest = new Holiday("Christmas", LocalDate.now().plusDays(5), true);
 
     @Test
-    @Order(1)
     void daysUntilNextHoliday() {
 //GIVEN
 //set a future date for the holiday (5 days from today) (simulates a scenario where holiday is in the future)

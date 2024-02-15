@@ -1,10 +1,7 @@
 package com.cbfacademy.apiassessment;
 
-
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -12,11 +9,9 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.context.annotation.Description;
 import org.springframework.http.ResponseEntity;
 
-import com.cbfacademy.apiassessment.main.App;
-
 import java.net.URL;
 
-
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest(classes = App.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class AppTests {
@@ -29,23 +24,23 @@ class AppTests {
 	@Autowired
 	private TestRestTemplate restTemplate;
 
-    @BeforeEach
-    void setUp() throws Exception {
+	@BeforeEach
+	public void setUp() throws Exception {
 		this.base = new URL("http://localhost:" + port + "/greeting");
 	}
 
-    @Test
-    @Description("/greeting endpoint returns expected response for default name")
-    void greeting_ExpectedResponseWithDefaultName() {
+	@Test
+	@Description("/greeting endpoint returns expected response for default name")
+	public void greeting_ExpectedResponseWithDefaultName() {
 		ResponseEntity<String> response = restTemplate.getForEntity(base.toString(), String.class);
 
 		assertEquals(200, response.getStatusCode().value());
 		assertEquals("Hello World", response.getBody());
 	}
 
-    @Test
-    @Description("/greeting endpoint returns expected response for specified name parameter")
-    void greeting_ExpectedResponseWithNameParam() {
+	@Test
+	@Description("/greeting endpoint returns expected response for specified name parameter")
+	public void greeting_ExpectedResponseWithNameParam() {
 		ResponseEntity<String> response = restTemplate.getForEntity(base.toString() + "?name=John", String.class);
 
 		assertEquals(200, response.getStatusCode().value());
