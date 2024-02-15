@@ -5,19 +5,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.time.LocalDate;
 
-
-import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import com.cbfacademy.apiassessment.api.entities.Holiday;
 
-
+@DisplayName("The holiday test should")
 public class HolidayTest {
     //Create an instance of the Holiday class
     Holiday holidayUnderTest = new Holiday("Christmas", LocalDate.now().plusDays(5), true);
 
     @Test
-    @Order(1)
+    @DisplayName("show how many days until the next holiday from today")
     void daysUntilNextHoliday() {
 //GIVEN
 //set a future date for the holiday (5 days from today) (simulates a scenario where holiday is in the future)
