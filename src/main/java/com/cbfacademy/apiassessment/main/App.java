@@ -19,8 +19,8 @@ public class App {
 	public static void main(String[] args) {
 		SpringApplication.run(App.class, args);
 
-		Holiday h1 = new Holiday("Christmas", LocalDate.now().plusDays(5), true);
-		Holiday h2 = new Holiday("New Year", LocalDate.now().plusDays(5), false);
+		Holiday h1 = new Holiday("Valentine's Day", LocalDate.now().plusDays(5), true);
+		Holiday h2 = new Holiday("St.Patricks Day", LocalDate.now().plusDays(5), false);
 		System.out.println(h1);
 		System.out.println(h2);
 	}
@@ -29,9 +29,9 @@ public class App {
 	@ResponseBody
 	public List<Holiday> hello() {
 		return List.of(
-			new Holiday("CNY",
+			new Holiday("Valentine's Day",
 							 LocalDate.now().plusDays(5),
-							 true));
+							 false));
 	}
 	
 	
