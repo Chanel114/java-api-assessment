@@ -1,4 +1,4 @@
-package com.cbfacademy.apiassessment.api;
+package com.cbfacademy.apiassessment;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
