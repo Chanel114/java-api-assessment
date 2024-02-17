@@ -5,10 +5,13 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.cbfacademy.apiassessment.api.entities.Holiday;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+@Repository
 public class HolidayRepositoryImpl implements HolidayRepository{
 //List to store holiday objects in memory initialised by empty array list
 private List<Holiday> holidays = new ArrayList<>();
