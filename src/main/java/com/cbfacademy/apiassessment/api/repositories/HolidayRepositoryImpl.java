@@ -13,6 +13,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Repository
 public class HolidayRepositoryImpl implements HolidayRepository{
+    
 //List to store holiday objects in memory initialised by empty array list
 private List<Holiday> holidays = new ArrayList<>();
 
@@ -28,7 +29,6 @@ private List<Holiday> holidays = new ArrayList<>();
         TypeReference<List<Holiday>> typeReference = new TypeReference<>() {};
       
         try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("holidays.json")) {
-            holidays = objectMapper.readValue(inputStream, typeReference);
             if (inputStream != null) {
                 // Read JSON data into a list of Holiday objects
                 holidays = objectMapper.readValue(inputStream, typeReference);
