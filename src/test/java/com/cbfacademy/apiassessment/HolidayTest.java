@@ -24,7 +24,7 @@ public class HolidayTest {
     
 //WHEN
 //Call the daysUntilNextHoliday method to calculate the days until the next holiday date (under test)
-        int daysUntilNextHoliday = holidayUnderTest.daysUntilNextHoliday();
+        LocalDate daysUntilNextHoliday = holidayUnderTest.daysUntilNextHoliday();
 //THEN
 //Asserts that the calculated days are equal to the expected value (5)
         assertEquals(5, daysUntilNextHoliday); 

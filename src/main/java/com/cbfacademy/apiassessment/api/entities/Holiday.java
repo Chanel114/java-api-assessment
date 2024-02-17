@@ -36,8 +36,6 @@ public void setPublicHoliday(boolean publicHoliday){
     }
     
 
-
-
 //Setter method for holiday date
 public void setDate(LocalDate date) {
         this.date = date;
@@ -45,15 +43,14 @@ public void setDate(LocalDate date) {
     
 //Getter method for local date (current date)
 public LocalDate getDate(){
-       return LocalDate.now().plusDays(0);
+       return date;
     }
     
 //Algorithm to calculate days until the next holiday
-public int daysUntilNextHoliday(){
+public LocalDate daysUntilNextHoliday(){
     LocalDate currentDate = LocalDate.now();
-    return (int)
     //calculates the number of days between the current date and the specified date (date). 
-    ChronoUnit.DAYS.between (currentDate, date);
+    return currentDate.plusDays(ChronoUnit.DAYS.between (currentDate, date));
     }
     //reps difference in days
 

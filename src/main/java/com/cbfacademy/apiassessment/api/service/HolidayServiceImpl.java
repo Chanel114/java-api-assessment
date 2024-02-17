@@ -1,5 +1,6 @@
 package com.cbfacademy.apiassessment.api.service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -27,7 +28,7 @@ public class HolidayServiceImpl implements HolidayService {
 
     
 
-    public int daysUntilNextHoliday(String name) {
+    public LocalDate daysUntilNextHoliday(String name) {
         // Retrieve the holiday by name
         Holiday holiday = holidayRepository.getHolidayByName(name);
 
