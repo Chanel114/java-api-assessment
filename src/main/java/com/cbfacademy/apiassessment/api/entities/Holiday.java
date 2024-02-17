@@ -43,7 +43,7 @@ public void setDate(LocalDate date) {
         this.date = date;
     }
     
-//Getter method for local date (current dat)
+//Getter method for local date (current date)
 public LocalDate getDate(){
        return LocalDate.now().plusDays(5);
     }
@@ -56,6 +56,7 @@ public int daysUntilNextHoliday(){
     ChronoUnit.DAYS.between (currentDate, date);
     }
     //reps difference in days
+
 
     //Getter Method for Holiday name
     public String getName(){
