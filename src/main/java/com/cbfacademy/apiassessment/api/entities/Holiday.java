@@ -10,8 +10,15 @@ public class Holiday {
     private boolean publicHoliday; // boolean flag indicates if is public holiday
 
 //Constructors (general object maker to make specific object maker (versioned object))
+public Holiday(String name, LocalDate date, boolean publicHoliday){
+    this.setName(name); // controls under rules of setName setter method - specific holiday names only
+    this.setDate(date); // controls under rules of setDate setter method
+    this.publicHoliday = publicHoliday;
+}
 
-   //use this constructor for test
+
+//Public holiday testing
+//use this constructor for test
 public Holiday(boolean publicHoliday){
     this.publicHoliday = publicHoliday;
 
@@ -29,11 +36,6 @@ public void setPublicHoliday(boolean publicHoliday){
     }
     
 
-public Holiday(String name, LocalDate date, boolean publicHoliday){
-        this.setName(name); // controls under rules of setName setter method - specific holiday names only
-        this.setDate(date); // controls under rules of setDate setter method
-        this.publicHoliday = publicHoliday;
-}
 
 
 //Setter method for holiday date

@@ -22,6 +22,8 @@ public class HolidayServiceImpl implements HolidayService {
         return holidayRepository.getHolidayByName(name);
     }
 
+    
+
     public int daysUntilNextHoliday(String name) {
         // Retrieve the holiday by name
         Holiday holiday = holidayRepository.getHolidayByName(name);
