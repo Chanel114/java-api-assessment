@@ -45,7 +45,7 @@ public void setDate(LocalDate date) {
     
 //Getter method for local date (current date)
 public LocalDate getDate(){
-       return LocalDate.now().plusDays(5);
+       return LocalDate.now().plusDays(0);
     }
     
 //Algorithm to calculate days until the next holiday
