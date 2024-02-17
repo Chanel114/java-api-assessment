@@ -23,12 +23,19 @@ private List<Holiday> holidays = new ArrayList<>();
     private void loadHolidayData() {
         ObjectMapper objectMapper = new ObjectMapper();
         TypeReference<List<Holiday>> typeReference = new TypeReference<>() {};
-        // Read JSON data into a list of Holiday objects
+      
         try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("holidays.json")) {
             holidays = objectMapper.readValue(inputStream, typeReference);
-
+            if (inputStream != null) {
+                // Read JSON data into a list of Holiday objects
+                holidays = objectMapper.readValue(inputStream, typeReference);
+            } else {
+                // Handle the case where the JSON file is not found
+                System.err.println("ERROR: Unable to find 'holidays.json' file in the classpath.");
+            }
         } catch (IOException e) {
-            e.printStackTrace(); // Handle the exception appropriately in a real application
+            // Handle the exception appropriately in a real application
+            e.printStackTrace();  //Log the exception or use a logging framework
         }
     }
 
