@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cbfacademy.apiassessment.api.service.HolidayService;
 
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 
@@ -42,7 +41,7 @@ public HolidayController(HolidayService holidayService){
   }
 
   @GetMapping("/{name}/daysUntilNext")
-  public int getDaysUntilNextHoliday(@RequestParam String name) {
+  public int getDaysUntilNextHoliday(@PathVariable String name) {
       return holidayService.daysUntilNextHoliday(name);
   }
   

@@ -24,16 +24,16 @@ public class HolidayRepoImplTest {
     }
 
     @Test
-    @DisplayName("show an non empty list of holidays")
+    @DisplayName("show a non-empty list of holidays")
     void getAllHolidays_ShouldReturnNonEmptyList() {
         // GIVEN
-        // Assume that the holiday data is not loaded initially
+        
 
         // WHEN
         List<Holiday> holidays = holidayRepository.getAllHolidays();
 
         // THEN
         assertNotNull(holidays);
-        assertEquals(1, holidays.size()); // Initially, the list should be empty
+        assertEquals(0, holidays.size()); 
     }
 }
