@@ -15,7 +15,7 @@ private List<Holiday> holidays = new ArrayList<>();
 
  // Constructor to load holiday data from JSON file during initialization
 //  The `loadHolidayData` method reads the data from the "holidays.json" file in the classpath and initializes the in-memory holiday list
- HolidayRepositoryImpl() {
+ public HolidayRepositoryImpl() {
         loadHolidayData();
     }
 
