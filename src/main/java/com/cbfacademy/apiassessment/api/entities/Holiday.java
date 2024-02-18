@@ -8,6 +8,11 @@ public class Holiday {
     private String name; //reps holiday name E.g christmas
     private LocalDate date; // reps date of holiday
     private boolean publicHoliday; // boolean flag indicates if is public holiday
+  
+//default constructor
+    public Holiday(){
+
+    }
 
 //Constructors (general object maker to make specific object maker (versioned object))
 public Holiday(String name, LocalDate date, boolean publicHoliday){
@@ -43,14 +48,14 @@ public void setDate(LocalDate date) {
     
 //Getter method for local date (current date)
 public LocalDate getDate(){
-       return date;
+    return daysUntilNextHoliday();
     }
     
 //Algorithm to calculate days until the next holiday
 public LocalDate daysUntilNextHoliday(){
     LocalDate currentDate = LocalDate.now();
     //calculates the number of days between the current date and the specified date (date). 
-    return currentDate.plusDays(ChronoUnit.DAYS.between (currentDate, date));
+    return currentDate.plusDays(ChronoUnit.DAYS.between(currentDate, date));
     }
 
 
