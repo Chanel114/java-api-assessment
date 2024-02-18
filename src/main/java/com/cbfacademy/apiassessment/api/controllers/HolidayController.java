@@ -4,6 +4,7 @@ package com.cbfacademy.apiassessment.api.controllers;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,10 +30,15 @@ public HolidayController(HolidayService holidayService){
   this.holidayService = holidayService;
 }
 
-  @GetMapping
-  public List<Holiday> getAllHolidays(){
-    return holidayService.getAllHolidays();
-  }
+  @GetMapping("/names")
+public List<String> getAllHolidayNames() {
+    List<Holiday> holidays = holidayService.getAllHolidays();
+    List<String> holidayNames = holidays.stream()
+                                       .map(Holiday::getName)
+                                       .collect(Collectors.toList());
+    return holidayNames;
+}
+
 
   
   @GetMapping("/{name}")

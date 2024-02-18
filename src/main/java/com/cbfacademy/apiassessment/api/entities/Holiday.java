@@ -15,7 +15,7 @@ public Holiday(String name, LocalDate date, boolean publicHoliday){
     this.setDate(date); // controls under rules of setDate setter method
     this.publicHoliday = publicHoliday;
 }
-
+    
 
 //Public holiday testing
 //use this constructor for test
@@ -52,17 +52,16 @@ public LocalDate daysUntilNextHoliday(){
     //calculates the number of days between the current date and the specified date (date). 
     return currentDate.plusDays(ChronoUnit.DAYS.between (currentDate, date));
     }
-    //reps difference in days
 
 
-    //Getter Method for Holiday name
-    public String getName(){
+//Getter Method for Holiday name
+public String getName(){
     return name;
     }
 
-    //Setter method for holiday date
-    public void setName(String name) {
-        this.name = name;
+//Setter method for holiday date
+public void setName(String name) {
+this.name = name;
 
 
 }
