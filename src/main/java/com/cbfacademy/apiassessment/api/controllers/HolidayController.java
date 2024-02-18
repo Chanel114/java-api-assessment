@@ -39,7 +39,6 @@ public ResponseEntity<List<String>> getAllHolidayNames() {
     return new ResponseEntity<>(holidayNames, HttpStatus.OK);
 }
 
-
   @GetMapping("/{name}")
   public ResponseEntity<Holiday> getHolidayByName(@PathVariable String name) {
     Holiday holiday = holidayService.getHolidayByName(name);
