@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +20,7 @@ import com.cbfacademy.apiassessment.api.service.HolidayService;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
@@ -77,6 +79,27 @@ public ResponseEntity<List<Map<String, String>>> getAllHolidayDetails() {
             return new ResponseEntity<>("Failed to add holiday: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
       }
+      
+      @PutMapping("/{name}")
+      public ResponseEntity<String> updateHoliday(@PathVariable String name, @RequestBody Holiday updateHoliday) {
+      try {
+        // the algorithm to update existing holiday in the repository
+        holidayService.updateHoliday(name, updateHoliday);
+        return new ResponseEntity<>("Holiday updated successfully", HttpStatus.OK);
+      } catch (Exception e) {
+        return new ResponseEntity<>("Failed to update holiday: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
+}
 
 
+      @DeleteMapping("/{name}")
+      public ResponseEntity<String> deleteHoliday(@PathVariable String name) {
+        try {
+          // The algorithm to delete existing holiday in the repository
+          holidayService.deleteHoliday(name);
+          return new ResponseEntity<>("Holiday deleted successfully", HttpStatus.OK);
+        } catch (Exception e) {
+          return new ResponseEntity<>("Failed to deleteholiday: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+}
+      }
+}

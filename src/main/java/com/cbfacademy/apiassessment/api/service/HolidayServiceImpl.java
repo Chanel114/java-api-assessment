@@ -37,6 +37,16 @@ public class HolidayServiceImpl implements HolidayService {
         //Logic to add a new holiday to the repository
         holidayRepository.addHoliday(holiday);
     }
+
+    @Override
+    public void updateHoliday(String name, Holiday updatedHoliday) {
+        holidayRepository.updateHoliday(name, updatedHoliday);
+    }
+
+    @Override
+    public void deleteHoliday(String name) {
+        holidayRepository.deleteHoliday(name);
+    }
 }
 
    

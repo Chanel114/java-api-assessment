@@ -13,4 +13,7 @@ public interface HolidayRepository {
     List<Holiday> getAllHolidays();
     Holiday getHolidayByName(String name);
     void addHoliday(Holiday holiday);
+    void updateHoliday(String name, Holiday updatedHoliday);
+    void deleteHoliday(String name);
+
 }

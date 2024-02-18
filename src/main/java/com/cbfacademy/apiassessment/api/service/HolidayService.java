@@ -15,5 +15,10 @@ public interface HolidayService {
     //Adds a holiday to the list
     void addHoliday(Holiday holiday);
 
+    // Edit existing Holiday
+    void updateHoliday(String name, Holiday updatedHoliday);
+    
+    // Delete existing Holiday
+    void deleteHoliday(String name);
 }
 

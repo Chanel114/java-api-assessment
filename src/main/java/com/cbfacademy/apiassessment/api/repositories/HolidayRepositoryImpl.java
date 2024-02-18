@@ -62,4 +62,22 @@ private List<Holiday> holidays = new ArrayList<>();
     public void addHoliday(Holiday holiday) {
        holidays.add(holiday);
     }
+
+    @Override
+    public void updateHoliday(String name, Holiday updatedHoliday) {
+    //logic to update exisiting holiday
+    Holiday existingHoliday = getHolidayByName(name);
+    if (existingHoliday != null) {
+        //update existing holiday's variables
+    existingHoliday.setName(updatedHoliday.getName());
+    existingHoliday.setDate(updatedHoliday.getDate());
+    existingHoliday.setPublicHoliday(updatedHoliday.isPublicHoliday());
+    }
+    }
+
+    @Override
+    public void deleteHoliday(String name) {
+        // Logic to delete a holiday by name
+        holidays.removeIf(holiday -> holiday.getName().equalsIgnoreCase(name));
+    }
 }

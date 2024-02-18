@@ -17,6 +17,19 @@ public Holiday(String name, String date, boolean publicHoliday){
     this.publicHoliday = publicHoliday;
 }
 
+@Override
+public boolean equals(Object obj){
+    if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Holiday holiday = (Holiday) obj;
+        return name.equals(holiday.name);
+}
+
+@Override
+    public int hashCode() {
+        return name.hashCode();
+    }
+
 //Getter Method for Holiday name
 public String getName() {
     return name;
@@ -32,10 +45,10 @@ public boolean isPublicHoliday(){
     return publicHoliday;
     }
 
-//Setter method for public holiday
-public void setPublicHoliday(boolean publicHoliday){
+// Setter method for public holiday
+public void setPublicHoliday(boolean publicHoliday) {
     this.publicHoliday = publicHoliday;
-    }
+}
 
 //Getter method for holiday date
 public String getDate(){
@@ -57,5 +70,6 @@ public String toString(){
     ", publicHoliday=" + publicHoliday +
     '}';
 }
-     }
+}
+
 
