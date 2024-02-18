@@ -8,5 +8,4 @@ import com.cbfacademy.apiassessment.api.entities.Holiday;
 public interface HolidayService {
     List<Holiday> getAllHolidays();
     Holiday getHolidayByName(String name);
-    Long daysUntilNextHoliday(String name);
 }

@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cbfacademy.apiassessment.api.entities.Holiday;
-import com.cbfacademy.apiassessment.api.exceptions.HolidayNotFoundException;
 import com.cbfacademy.apiassessment.api.service.HolidayService;
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -49,15 +48,5 @@ public ResponseEntity<List<String>> getAllHolidayNames() {
     }
   }
 
-  @GetMapping("/{name}/daysUntilNext")
-  public ResponseEntity<Long> getDaysUntilNextHoliday(@PathVariable String name) {
-    try {
-      Long daysUntilNextHoliday = holidayService.daysUntilNextHoliday(name);
-      return new ResponseEntity<>(daysUntilNextHoliday, HttpStatus.OK);
-    } catch (HolidayNotFoundException e) {
-      //handle if the holiday is not found
-      return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-    }
-  }
 }
 

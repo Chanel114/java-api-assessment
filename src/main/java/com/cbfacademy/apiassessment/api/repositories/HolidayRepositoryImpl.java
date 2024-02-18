@@ -26,8 +26,9 @@ private List<Holiday> holidays = new ArrayList<>();
         loadHolidayData();
     }
 
-    // Method to load holiday data from the JSON file using Gson
+    // Method to load holiday data from the JSON file using Jackson
     private void loadHolidayData() {
+
         try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("holidays.json")) {
             if (inputStream != null) {
                 // Read JSON data into a list of Holiday objects
