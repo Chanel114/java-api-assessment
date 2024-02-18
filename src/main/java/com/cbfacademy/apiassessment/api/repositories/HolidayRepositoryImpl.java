@@ -1,15 +1,17 @@
 package com.cbfacademy.apiassessment.api.repositories;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
 import com.cbfacademy.apiassessment.api.entities.Holiday;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 @Repository
 public class HolidayRepositoryImpl implements HolidayRepository{
@@ -23,15 +25,13 @@ private List<Holiday> holidays = new ArrayList<>();
         loadHolidayData();
     }
 
-    // Method to load holiday data from the JSON file
+    // Method to load holiday data from the JSON file using Gson
     private void loadHolidayData() {
-        ObjectMapper objectMapper = new ObjectMapper();
-        TypeReference<List<Holiday>> typeReference = new TypeReference<>() {};
-      
         try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("holidays.json")) {
             if (inputStream != null) {
                 // Read JSON data into a list of Holiday objects
-                holidays = objectMapper.readValue(inputStream, typeReference);
+                BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+                holidays = new Gson().fromJson(reader, new TypeToken<List<Holiday>>() {}.getType());
             } else {
                 // Handle the case where the JSON file is not found
                 System.err.println("ERROR: Unable to find 'holidays.json' file in the classpath.");
