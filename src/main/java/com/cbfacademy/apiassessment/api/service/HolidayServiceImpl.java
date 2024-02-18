@@ -23,5 +23,18 @@ public class HolidayServiceImpl implements HolidayService {
     public Holiday getHolidayByName(String name) {
         return holidayRepository.getHolidayByName(name);
     }
+    
+    //Algotrithm
+    public boolean isPublicHoliday(String date) {
+        //retrieve holiday by given date
+        Holiday holiday = holidayRepository.getHolidayByName(date);
+        //method retuns true is conditions are met
+        return holiday != null && holiday.isPublicHoliday();
+    }
+
+
+
+
 }
+
    

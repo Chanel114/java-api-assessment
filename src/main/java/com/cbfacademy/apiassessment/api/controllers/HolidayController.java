@@ -20,6 +20,7 @@ import com.cbfacademy.apiassessment.api.service.HolidayService;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
+
 @RestController
 @RequestMapping("holidays")
 public class HolidayController {
@@ -56,5 +57,12 @@ public ResponseEntity<List<Map<String, String>>> getAllHolidayDetails() {
     }
   }
 
+
+  @GetMapping("/isPublicHoliday/{date}")
+  public ResponseEntity<Boolean> isPublicHoliday(@PathVariable String date) {
+    boolean isPublicHoliday = holidayService.isPublicHoliday(date);
+      return new ResponseEntity<>(isPublicHoliday, HttpStatus.NOT_FOUND);
+  }
+  
 }
 
