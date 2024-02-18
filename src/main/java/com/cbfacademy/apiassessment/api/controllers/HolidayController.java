@@ -18,6 +18,9 @@ import com.cbfacademy.apiassessment.api.entities.Holiday;
 import com.cbfacademy.apiassessment.api.service.HolidayService;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 
@@ -63,5 +66,17 @@ public ResponseEntity<List<Map<String, String>>> getAllHolidayDetails() {
         List<Holiday> publicHolidays = holidayService.getPublicHolidays();
         return new ResponseEntity<>(publicHolidays, HttpStatus.OK);
     }
-}
+
+    @PostMapping
+    public ResponseEntity<String> addHoliday(@RequestBody Holiday newHoliday) {
+        try {
+            // Your algorithm to add a new holiday to the repository
+            holidayService.addHoliday(newHoliday);
+            return new ResponseEntity<>("Holiday added successfully", HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>("Failed to add holiday: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+      }
+    }
+
 

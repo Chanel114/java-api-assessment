@@ -57,4 +57,9 @@ private List<Holiday> holidays = new ArrayList<>();
         // Uses Java Streams to filter holiday or return null if no holiday is found
         return holidays.stream().filter(holiday -> holiday.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
     }
+
+    @Override
+    public void addHoliday(Holiday holiday) {
+       holidays.add(holiday);
+    }
 }

@@ -32,6 +32,11 @@ public class HolidayServiceImpl implements HolidayService {
             .filter(Holiday::isPublicHoliday)
             .collect(Collectors.toList());
     }
+
+    public void addHoliday(Holiday holiday){
+        //Logic to add a new holiday to the repository
+        holidayRepository.addHoliday(holiday);
+    }
 }
 
    

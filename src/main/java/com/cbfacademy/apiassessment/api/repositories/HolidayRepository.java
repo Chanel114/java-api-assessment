@@ -12,4 +12,5 @@ public interface HolidayRepository {
     //initialise getallholidays method  
     List<Holiday> getAllHolidays();
     Holiday getHolidayByName(String name);
+    void addHoliday(Holiday holiday);
 }

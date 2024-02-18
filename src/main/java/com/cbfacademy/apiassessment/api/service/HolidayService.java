@@ -11,5 +11,9 @@ public interface HolidayService {
 
     //will determine if holiday chosen is a public holiday
     List<Holiday> getPublicHolidays();
+
+    //Adds a holiday to the list
+    void addHoliday(Holiday holiday);
+
 }
 
