@@ -1,7 +1,9 @@
 package com.cbfacademy.apiassessment.api.controllers;
 
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,13 +31,19 @@ public HolidayController(HolidayService holidayService){
   this.holidayService = holidayService;
 }
 
-  @GetMapping
-public ResponseEntity<List<String>> getAllHolidayNames() {
+@GetMapping
+public ResponseEntity<List<Map<String, String>>> getAllHolidayDetails() {
     List<Holiday> holidays = holidayService.getAllHolidays();
-    List<String> holidayNames = holidays.stream()
-                                       .map(Holiday::getName)
-                                       .collect(Collectors.toList());
-    return new ResponseEntity<>(holidayNames, HttpStatus.OK);
+    List<Map<String, String>> holidayDetails = holidays.stream()
+            .map(holiday -> {
+                Map<String, String> details = new HashMap<>();
+                details.put("name", holiday.getName());
+                details.put("date", holiday.getDate());
+                return details;
+            })
+            .collect(Collectors.toList());
+
+    return new ResponseEntity<>(holidayDetails, HttpStatus.OK);
 }
 
   @GetMapping("/{name}")
