@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 //import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -24,7 +25,7 @@ public class HolidayTest {
     
 //WHEN
 //Call the daysUntilNextHoliday method to calculate the days until the next holiday date (under test)
-        LocalDate daysUntilNextHoliday = holidayUnderTest.daysUntilNextHoliday();
+long daysUntilNextHoliday = ChronoUnit.DAYS.between(LocalDate.now(), holidayUnderTest.daysUntilNextHoliday());
 //THEN
 //Asserts that the calculated days are equal to the expected value (5)
         assertEquals(5, daysUntilNextHoliday); 
