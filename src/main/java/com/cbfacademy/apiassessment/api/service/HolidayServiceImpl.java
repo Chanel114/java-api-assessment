@@ -28,18 +28,14 @@ public class HolidayServiceImpl implements HolidayService {
 
     
 
-    public Long daysUntilNextHoliday(String name) {
+    public LocalDate daysUntilNextHoliday(String name) {
         // Retrieve the holiday by name
         Holiday holiday = holidayRepository.getHolidayByName(name);
 
         // Check if the holiday is found
         if (holiday != null) {
             // Calculate the days until the next holiday
-           LocalDate currentDate = LocalDate.now();
-           LocalDate nextHolidayDate = holiday.getDate();
-           long daysUntilNextHoliday = currentDate.until(nextHolidayDate).getDays();
-           return daysUntilNextHoliday;
-            
+            return holiday.daysUntilNextHoliday();
         } else {
             // Handle the case where the holiday is not found
             throw new HolidayNotFoundException("Holiday not found");
