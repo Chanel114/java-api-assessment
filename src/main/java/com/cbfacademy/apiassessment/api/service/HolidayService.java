@@ -10,6 +10,6 @@ public interface HolidayService {
     Holiday getHolidayByName(String name);
 
     //will determine if holiday chosen is a public holiday
-    boolean isPublicHoliday(String date);
+    List<Holiday> getPublicHolidays();
 }
 

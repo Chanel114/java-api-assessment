@@ -58,11 +58,10 @@ public ResponseEntity<List<Map<String, String>>> getAllHolidayDetails() {
   }
 
 
-  @GetMapping("/isPublicHoliday/{date}")
-  public ResponseEntity<Boolean> isPublicHoliday(@PathVariable String date) {
-    boolean isPublicHoliday = holidayService.isPublicHoliday(date);
-      return new ResponseEntity<>(isPublicHoliday, HttpStatus.NOT_FOUND);
-  }
-  
+  @GetMapping("/publicHolidays")
+    public ResponseEntity<List<Holiday>> getPublicHolidays() {
+        List<Holiday> publicHolidays = holidayService.getPublicHolidays();
+        return new ResponseEntity<>(publicHolidays, HttpStatus.OK);
+    }
 }
 

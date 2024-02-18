@@ -1,6 +1,7 @@
 package com.cbfacademy.apiassessment.api.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
@@ -25,16 +26,12 @@ public class HolidayServiceImpl implements HolidayService {
     }
     
     //Algotrithm
-    public boolean isPublicHoliday(String date) {
-        //retrieve holiday by given date
-        Holiday holiday = holidayRepository.getHolidayByName(date);
-        //method retuns true is conditions are met
-        return holiday != null && holiday.isPublicHoliday();
+    @Override
+    public List<Holiday> getPublicHolidays() {
+    return holidayRepository.getAllHolidays().stream()
+            .filter(Holiday::isPublicHoliday)
+            .collect(Collectors.toList());
     }
-
-
-
-
 }
 
    
