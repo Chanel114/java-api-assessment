@@ -1,137 +1,54 @@
-# **Java API Assessment**
+# RESTful Holiday API
 
-## **Introduction**
-Dive into the world of API development using Java and SpringBoot. We're handing over a skeleton codebase; your challenge is to shape a top-notch API from it.
+🎉 Exciting News for Holiday Enthusiasts! 🎉
 
-You can build any API of your choosing, but it must include the following:
+Embark on a journey with our API Assessment project – a simple and adaptable RESTful API crafted specifically for the seamless management of holiday-related data. This project is not just a codebase; it's a personalized solution designed to meet the unique needs of developers and businesses alike.
 
-1. At least one algorithm
-1. Unit test at least one class
-1. Store the data in a JSON file 
-1. Exception handling 
-1. Evidence of inheritance
-1. Good use of HTTP Protocols - methods, request and response, have full CRUD operations supported 
-1. Documentation
+For Developers 🚀
+Are you a developer eager to dive into the world of RESTful APIs? Look no further! Our API offers a robust backend for holiday data, providing you with a playground to explore, experiment, and integrate.
 
-### **Learning Outcomes:**
+Join us on this exciting journey of efficient holiday data management! 💻✨
 
-By the end of this assessment, you should be able to:
+## Features
 
-1. **Design and Architect APIs**: Get to grips with the nitty-gritty of curating a top-quality API, focusing on data flow and endpoint interactions.
-1. **Implement Best Practices**: Showcase your adherence to Java & SpringBoot coding standards, error handling, and optimal project structure.
-1. **Code Integration**: Seamlessly combine your creations with the provided skeleton codebase.
-1. **Exception Management**: Efficiently handle exceptions, ensuring your API remains sturdy and dependable.
+- Comprehensive CRUD (Create, Read, Update, Delete) operations are seamlessly integrated to efficiently manage volunteers within the system.
+- An advanced search algorithm is implemented, enabling users to perform intricate searches based on volunteers' skills, roles, and active status.
+- The application ensures persistent data storage, employing a JSON file format to securely maintain volunteer-related information.
+- Exception handling mechanisms have been implemented, ensuring a resilient error management system.
 
-Onward with this assessment, you're set for a deep dive into API development with Java and SpringBoot.
+- Leveraging the lightweight and standalone capabilities of Spring Boot, the application is configured for optimal performance.
 
-## **Design & Requirements**
+## Prerequisites
 
-### **Design Considerations:**
-- **API Flow**: Map out your API's progression, from endpoints to their functionalities.
-
-### **Requirements List:**
-- **Core**: Make use of Java and SpringBoot.
-- **End Points**: Ensure they are detailed and fully operational.
-- **Error Handling**: Your API should handle mishaps gracefully and return informative feedback.
-
-### **Learning Outcomes:**
-- Acknowledge the pivotal role of a focused design in APIs.
-- See firsthand how a detailed requirements list can pave the way for successful development.
-
-## **Repository Management**
-
-- **Consistent Commits**: Commit often, capturing your progress and thought process.
-- **README**: Not just an afterthought. Fill it with the essence of your API, setup instructions, and other salient details.
-
-### **Learning Outcomes:**
-- Hone your skills in effective version control.
-- Recognise the value of a well-curated repository.
-
-## **Code Quality & Structure**
-
-- **Best Practices**: Stick to Java and SpringBoot best practices and conventions.
-- **Modularity**: Your code should be modular, reusable, and easily comprehensible.
-
-#### **Learning Outcomes:**
-- Craft clean, efficient, and maintainable code.
-- Harness Java and SpringBoot to the fullest.
-
----
-
-## Getting Started
-
-- [Prerequisites](#prerequisites)
-
-- [Setup](#setup)
-
-### Prerequisites
-
-Before you begin, make sure you have the following installed:
-
-1. [JDK 17](https://learn.microsoft.com/en-gb/java/openjdk/download#openjdk-17) (or higher)
-
-2. [Git](https://git-scm.com/downloads)
-
-3. [Visual Studio Code](https://code.visualstudio.com/Download)
+- [JDK 17](https://learn.microsoft.com/en-gb/java/openjdk/download#openjdk-17) (or later)
+- Maven 3.6.3 or later (if building from source)
+- An IDE of your choice (e.g., IntelliJIDEA, Eclipse) VS Code was used for this project. [Visual Studio Code](https://code.visualstudio.com/Download)
    1. [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
    2. [Spring Boot Extension Pack](https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack)
 
-Also make sure you have accounts for the following:
-
-1. [GitHub](https://github.com/signup)
-
-### Setup
+### Setup and Installation
 
 #### 1. Clone the Repository
 
 ```sh
-git clone [REPO_URL]
-cd [REPO_NAME]
+git clone (repository URL)
 ```
 
-Replace [REPO_URL] with the link to your GitHub repository and [REPO_NAME] with the repository's name.
-
-#### 2. Install Dependencies
-
-Open a terminal at the root of the repo directory and run the following command to install the dependencies:
+#### 2. Navigate to the directory
 
 ```sh
-./mvnw clean dependency:resolve
+cd (project directory)
 ```
 
-If you are on a Windows machine, that will be:
-```cmd
-mvnw clean dependency:resolve
-```
-
-You should see console output similar to the following:
+#### 3. Build the project using Maven (optional if running from an IDE)
 
 ```sh
-[INFO] Scanning for projects...
-[INFO] 
-[INFO] -------------------< com.cbfacademy:api-assessment >--------------------
-[INFO] Building api-assessment 0.0.1-SNAPSHOT
-[INFO]   from pom.xml
-[INFO] --------------------------------[ jar ]---------------------------------
-[INFO] 
-[INFO] --- clean:3.2.0:clean (default-clean) @ api-assessment ---
-[INFO] Deleting /Users/user/Dev/cbfacademy/java-api-assessment/target
-...
-[truncated output]
-...
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  3.060 s
-[INFO] Finished at: 2023-10-03T16:18:25+01:00
-[INFO] ------------------------------------------------------------------------
+mvn clean install
 ```
 
-#### 3. Running the Application
+#### 4. Run the application
 
-To start the API in VS Code, press `F5` or tap the 'Play' icon for the `api-assessment` app in the Spring Boot Dashboard.
-
-Alternatively, to start the API from the terminal, run the following command:
+To start the API in VS Code, from the terminal, run the following command:
 
 ```sh
 ./mvnw spring-boot:run
@@ -143,62 +60,131 @@ Or on Windows:
 mvnw spring-boot:run
 ```
 
-You should see console output similar to the following (press `Ctrl + C` to exit):
-
-```sh
-[INFO] Scanning for projects...
-[INFO] 
-[INFO] -------------------< com.cbfacademy:api-assessment >--------------------
-[INFO] Building api-assessment 0.0.1-SNAPSHOT
-[INFO]   from pom.xml
-[INFO] --------------------------------[ jar ]---------------------------------
-[INFO] 
-[INFO] --- clean:3.2.0:clean (default-clean) @ api-assessment ---
-[INFO] Deleting /Users/gary/Dev/cbfacademy/java-api-assessment/target
-[INFO] 
-[INFO] >>> spring-boot:3.1.4:run (default-cli) > test-compile @ api-assessment >>>
-[INFO] 
-[INFO] --- resources:3.3.1:resources (default-resources) @ api-assessment ---
-[INFO] Copying 1 resource from src/main/resources to target/classes
-[INFO] Copying 0 resource from src/main/resources to target/classes
-...
-[truncated output]
-...
-2023-10-03T17:17:34.413+01:00  INFO 35536 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2023-10-03T17:17:34.751+01:00  INFO 35536 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-10-03T17:17:34.756+01:00  INFO 35536 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-10-03T17:17:34.756+01:00  INFO 35536 --- [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.13]
-2023-10-03T17:17:34.777+01:00  INFO 35536 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-10-03T17:17:34.778+01:00  INFO 35536 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 364 ms
-2023-10-03T17:17:34.898+01:00  INFO 35536 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2023-10-03T17:17:34.907+01:00  INFO 35536 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2023-10-03T17:17:34.911+01:00  INFO 35536 --- [  restartedMain] com.cbfacademy.apiassessment.App         : Started App in 0.643 seconds (process running for 0.786)
-```
-
 Open your browser and navigate to `http://localhost:8080`.
 
-## **Deliverables**
+---
 
-Ensure that your work is merged to the `main` branch of your GitHub repository by the specified deadline (original or extended). Your solution will assessed based on its state *at that point*; any later commits will **not** be taken into account.
+## EndPoints
 
-## FAQs
+Endpoints from the RESTful Holiday API.
+Including
 
-- Q: How can I process JSON in Java?
-    
-    A: There are a number of open-source packages that you can use to manipulate JSON. We recommend [Gson](https://github.com/google/gson), but you can also investigate alternatives like [json-simple](https://github.com/cliftonlabs/json-simple) or [Jackson](https://github.com/FasterXML/jackson-databind/).
+- HTTP methods
+- A brief description of the expected Response.
 
-- Q: Can I use another IDE I'm more familiar with instead of VS Code, like IntelliJ or Eclipse?
+## Get all Holidays
 
-    A: You can if you wish, but only VS Code is formally supported by CBF Academy staff, so you do so at your own risk.
+```http
+  GET /holidays
+```
 
-## Top Tips
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `api_key` | `string` | **Required**. Your API key |
 
-- :camera_flash: Commit frequently and use meaningful commit messages. A granular, well-labelled history becomes an increasingly valuable asset over time.
-- :cactus: Use feature branches. Build the habit of isolating your changes for specific tasks and merging them into your default branch when complete.
-- :vertical_traffic_light: Use consistent naming conventions. Choose easily understandable names and naming patterns for your classes, functions and variables.
-- :triangular_ruler: Keep your code tidy. Using the built-in formatting of VS Code or other IDEs makes your code easier to read and mistakes easier to spot.
-- :books: Read the docs. Whether via Intellisense in your IDE, or browsing online documentation, build a clear understanding of the libraries your code leverages.
-- :calendar: Don't wait until the last minute. Plan your work early and make the most of the time available to complete the assessment and avoid pre-deadline palpitations.
-- :sos: Ask. :clap: For. :clap: Help! :clap: Your mentors, instructors and assistants are literally here to support you, so *make use of them* - don't sit and struggle in silence.
+## Response
 
-Best of luck! Remember, it's not just about the destination; it's the journey. Happy coding! 🚀
+A JSON array containing comprehensive holiday details.
+
+## Get Holidays by Name
+
+```http
+  GET /holidays/{name}
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `name` | `string` | **Required**. Name of the holiday |
+
+## Response Get
+
+A JSON object containing specific & detailed holiday information.
+
+## Get Public Holidays
+
+```http
+ GET /holidays/publicHolidays
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `api_key` | `string` | **Required**. Your API key |
+
+## Response G
+
+A JSON array containing public holiday details.
+
+## Add Holiday
+
+```http
+  POST / holidays
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `name` | `string` | **Required**.Name of holiday|
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `date` | `string` | **Required**.Date of holiday |
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `public` | `boolean` | **Required**. is it a public holiday?|
+
+## Response Put
+
+Success message or an error message.
+
+## Update Holidays
+
+```http
+ PUT /holidays/{name}
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `name` | `string` | **Required**. Name of holiday |
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `date` | `string` | **Required**. Updated date of the holiday|
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `public` | `boolean` | **Required**. Updated public status of holiday |
+
+## Response Updated
+
+Success message or an error message.
+
+## Delete Holidays
+
+```http
+DELETE /holidays/{name}
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `name` | `string` | **Required**. Name of holiday |
+
+## Response Deleted
+
+Success message or an error message.
+
+## Documentation
+
+## Postman for Testing and Documentation
+
+To interact and test the API using Postman. Follow the instructions to import and use the collection:
+
+- Download and install [Postman](https://www.postman.com/).
+- Access (<https://documenter.getpostman.com/view/32697519/2sA2r82PPm>).
+
+- Import into your Postman application.
+- Select an environment (if needed)
+- initiate requests to the API endpoints.
+
+## Authors
+
+## By Chanel Robinson
+
+## Acknowledgements
+
+A sincere appreciation for course Coding Black Females Director Gary and Lecturer Hope. Their guidance and expertise have been invaluable in shaping the course content and providing a rich learning experience
