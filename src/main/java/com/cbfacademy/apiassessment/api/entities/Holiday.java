@@ -41,9 +41,9 @@ public void setName(String name) {
 } 
 
 //Getter method for public holiday
-public boolean isPublicHoliday(){
+public boolean isPublicHoliday() {
     return publicHoliday;
-    }
+}
 
 // Setter method for public holiday
 public void setPublicHoliday(boolean publicHoliday) {

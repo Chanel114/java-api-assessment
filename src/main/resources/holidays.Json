@@ -1,38 +1,72 @@
 [
   {
     "name": "New Year's Day",
-    "date": "2024-01-01"
+    "date": "2024-01-01",
+    "publicHoliday": true
   },
   {
     "name": "Valentine's Day",
-    "date": "2024-02-14"
+    "date": "2024-02-14",
+    "publicHoliday": true
+  },
+  {
+    "name": "Mother's Day",
+    "date": "2024-03-27",
+    "publicHoliday": false
   },
   {
     "name": "Good Friday",
-    "date": "2024-03-29"
+    "date": "2024-03-29",
+    "publicHoliday": true
+  },
+  {
+    "name": "April Fools",
+    "date": "2024-04-01",
+    "publicHoliday": false
   },
   {
     "name": "Easter Monday",
-    "date": "2024-04-01"
+    "date": "2024-04-01",
+    "publicHoliday": true
   },
   {
     "name": "Early May Bank Holiday",
-    "date": "2024-05-06"
+    "date": "2024-05-06",
+    "publicHoliday": true
   },
   {
     "name": "Spring Bank Holiday",
-    "date": "2024-05-27"
+    "date": "2024-05-27",
+    "publicHoliday": true
+  },
+  {
+    "name": "Father's Day",
+    "date": "2024-06-19",
+    "publicHoliday": false
   },
   {
     "name": "Summer Bank Holiday",
-    "date": "2024-08-26"
+    "date": "2024-08-26",
+    "publicHoliday": true
+  },
+  {
+    "name": "Haloween",
+    "date": "2024-10-31",
+    "publicHoliday": false
+  },
+  {
+    "name": "Bonfire Night",
+    "date": "2024-11-05",
+    "publicHoliday": false
   },
   {
     "name": "Christmas Day",
-    "date": "2024-12-25"
+    "date": "2024-12-25",
+    "publicHoliday": true
   },
   {
     "name": "Boxing Day",
-    "date": "2024-12-26"
+    "date": "2024-12-26",
+    "publicHoliday": true
   }
 ]
