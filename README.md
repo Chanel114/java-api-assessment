@@ -75,7 +75,7 @@ Including
 ## Get all Holidays
 
 ```http
-  GET /holidays
+GET /holidays
 ```
 
 | Parameter | Type     | Description                |
@@ -89,7 +89,7 @@ A JSON array containing comprehensive holiday details.
 ## Get Holidays by Name
 
 ```http
-  GET /holidays/{name}
+GET /holidays/{name}
 ```
 
 | Parameter | Type     | Description                |
@@ -103,7 +103,7 @@ A JSON object containing specific & detailed holiday information.
 ## Get Public Holidays
 
 ```http
- GET /holidays/publicHolidays
+GET /holidays/publicHolidays
 ```
 
 | Parameter | Type     | Description                |
@@ -117,7 +117,7 @@ A JSON array containing public holiday details.
 ## Add Holiday
 
 ```http
-  POST / holidays
+POST / holidays
 ```
 
 | Parameter | Type     | Description                |
@@ -137,7 +137,7 @@ Success message or an error message.
 ## Update Holidays
 
 ```http
- PUT /holidays/{name}
+PUT /holidays/{name}
 ```
 
 | Parameter | Type     | Description                |
